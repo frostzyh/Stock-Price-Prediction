@@ -74,8 +74,9 @@ regressor.add(Dense(units = 1))
 regressor.compile(optimizer = 'adam', loss = 'mean_squared_error')
 
 # Fitting the RNN to the Training set
+t_start = timeit.default_timer()
 regressor.fit(X_train, y_train, epochs = 100, batch_size = 32)
-
+print ("Total Training time is" + (timeit.default_timer() - t_start))
 
 
 # Part 3 - Making the predictions and visualising the results
